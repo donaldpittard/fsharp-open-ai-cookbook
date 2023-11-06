@@ -79,7 +79,7 @@ module EmbeddingsUtils =
         | Ok embedding -> Ok(embedding)
         | Error m -> Error m
 
-    let getCosineSimilarity (v1: float32[]) (v2: float32[]) =
+    let cosineSimilarity (v1: float32[]) (v2: float32[]) =
         let x = ReadOnlySpan<float32>(v1)
         let y = ReadOnlySpan<float32>(v2)
 
