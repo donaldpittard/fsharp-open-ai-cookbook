@@ -28,6 +28,20 @@ type AugmentedReview() =
             this.Summary <- baseReview.Summary
             this.Text <- baseReview.Text
 
+    new(copy: AugmentedReview) as this =
+        AugmentedReview()
+        then
+            this.Id <- copy.Id
+            this.Time <- copy.Time
+            this.ProductId <- copy.ProductId
+            this.UserId <- copy.UserId
+            this.Score <- copy.Score
+            this.Summary <- copy.Summary
+            this.Text <- copy.Text
+            this.Combined <- copy.Combined
+            this.NTokens <- copy.NTokens
+            this.Embedding <- copy.Embedding
+
 type StringArrayConverter() =
     inherit TypeConversion.ArrayConverter()
 
