@@ -70,7 +70,7 @@ let getClient apiKey =
     | Error s -> failwith "Unable to initialize client")
 
 module EmbeddingsUtils =
-    let getEmbeddings str model : Result<Embedding[], string> =
+    let getEmbedding str model : Result<Embedding[], string> =
         let apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY")
         let client = getClient apiKey
         let result = client.GetEmbeddings str model |> Async.RunSynchronously
